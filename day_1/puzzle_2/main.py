@@ -6,7 +6,7 @@ def read_input():
         
     return lines
 
-data = read_input()s
+data = read_input()
     
 
 count = 0
