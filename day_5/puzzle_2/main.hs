@@ -28,4 +28,4 @@ getTravelledPoints :: [[[Int]]] -> [[[Int]]]
 getTravelledPoints = map getTravelledPointsFromMovement
 
 getSafePointsAmount :: [[[Int]]] -> Int
-getSafePointsAmount = length . map head . filter (\xs -> length xs > 1) . group . sort . concat
+getSafePointsAmount = length . filter (\xs -> length xs > 1) . group . sort . concat
