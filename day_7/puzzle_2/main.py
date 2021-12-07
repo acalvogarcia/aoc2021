@@ -1,5 +1,6 @@
 from statistics import mean
 from functools import reduce
+from math import floor, ceil
 
 def read_input():
     with open("input.txt", "r") as input_file:
@@ -9,5 +10,9 @@ data = read_input()
 
 def T(n): return n*(n+1)/2
 
-final_position = int(mean(data))
-print(int(reduce(lambda x,y: x + T(abs(y-final_position)), read_input(), 0)))
+mean_position = mean(data)
+result = min(
+    int(reduce(lambda x,y: x + T(abs(y-floor(mean_position))), data, 0)),
+    int(reduce(lambda x,y: x + T(abs(y-ceil(mean_position))), data, 0))
+)
+print(result)
